@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>心情调酒模拟器</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero__copy">
+          <p class="eyebrow">Mood Mix Lab</p>
+          <h1>心情调酒模拟器</h1>
+          <p class="subtitle">
+            选择材料、心情和口味偏好，生成一杯只属于你的创意饮品。
+          </p>
+          <div class="hero__chips">
+            <span>40+ 材料组合</span>
+            <span>灵感风味语句</span>
+            <span>调酒师建议</span>
+          </div>
+        </div>
+        <div class="hero__glass" aria-hidden="true">
+          <div class="glass">
+            <div class="glass__liquid"></div>
+            <div class="glass__shine"></div>
+            <div class="glass__ice"></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="panel">
+        <section class="panel__form" aria-label="调酒参数">
+          <div class="section-title">
+            <h2>挑选你的材料</h2>
+            <p>组合越丰富，风味越有层次。</p>
+          </div>
+
+          <div class="grid">
+            <div class="card">
+              <h3>基酒 Spirits</h3>
+              <div class="option-grid">
+                <label><input type="checkbox" value="金酒" name="spirit" />金酒</label>
+                <label><input type="checkbox" value="伏特加" name="spirit" />伏特加</label>
+                <label><input type="checkbox" value="白朗姆" name="spirit" />白朗姆</label>
+                <label><input type="checkbox" value="黑朗姆" name="spirit" />黑朗姆</label>
+                <label><input type="checkbox" value="龙舌兰" name="spirit" />龙舌兰</label>
+                <label><input type="checkbox" value="波本" name="spirit" />波本</label>
+                <label><input type="checkbox" value="威士忌" name="spirit" />威士忌</label>
+                <label><input type="checkbox" value="干邑" name="spirit" />干邑</label>
+                <label><input type="checkbox" value="梅酒" name="spirit" />梅酒</label>
+                <label><input type="checkbox" value="清酒" name="spirit" />清酒</label>
+                <label><input type="checkbox" value="雪莉" name="spirit" />雪莉</label>
+                <label><input type="checkbox" value="苦艾酒" name="spirit" />苦艾酒</label>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>混合 Mixer</h3>
+              <div class="option-grid">
+                <label><input type="checkbox" value="苏打水" name="mixer" />苏打水</label>
+                <label><input type="checkbox" value="汤力水" name="mixer" />汤力水</label>
+                <label><input type="checkbox" value="姜汁汽水" name="mixer" />姜汁汽水</label>
+                <label><input type="checkbox" value="青柠汁" name="mixer" />青柠汁</label>
+                <label><input type="checkbox" value="柠檬汁" name="mixer" />柠檬汁</label>
+                <label><input type="checkbox" value="菠萝汁" name="mixer" />菠萝汁</label>
+                <label><input type="checkbox" value="西柚汁" name="mixer" />西柚汁</label>
+                <label><input type="checkbox" value="蔓越莓汁" name="mixer" />蔓越莓汁</label>
+                <label><input type="checkbox" value="苹果汁" name="mixer" />苹果汁</label>
+                <label><input type="checkbox" value="椰奶" name="mixer" />椰奶</label>
+                <label><input type="checkbox" value="茉莉冷泡茶" name="mixer" />茉莉冷泡茶</label>
+                <label><input type="checkbox" value="红茶" name="mixer" />红茶</label>
+                <label><input type="checkbox" value="冷萃咖啡" name="mixer" />冷萃咖啡</label>
+                <label><input type="checkbox" value="起泡酒" name="mixer" />起泡酒</label>
+                <label><input type="checkbox" value="橙汁" name="mixer" />橙汁</label>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>果香 Fruit</h3>
+              <div class="option-grid">
+                <label><input type="checkbox" value="草莓" name="fruit" />草莓</label>
+                <label><input type="checkbox" value="蓝莓" name="fruit" />蓝莓</label>
+                <label><input type="checkbox" value="桃子" name="fruit" />桃子</label>
+                <label><input type="checkbox" value="芒果" name="fruit" />芒果</label>
+                <label><input type="checkbox" value="百香果" name="fruit" />百香果</label>
+                <label><input type="checkbox" value="葡萄" name="fruit" />葡萄</label>
+                <label><input type="checkbox" value="椰子" name="fruit" />椰子</label>
+                <label><input type="checkbox" value="荔枝" name="fruit" />荔枝</label>
+                <label><input type="checkbox" value="梨" name="fruit" />梨</label>
+                <label><input type="checkbox" value="樱桃" name="fruit" />樱桃</label>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>香草 Herbs</h3>
+              <div class="option-grid">
+                <label><input type="checkbox" value="薄荷" name="herb" />薄荷</label>
+                <label><input type="checkbox" value="罗勒" name="herb" />罗勒</label>
+                <label><input type="checkbox" value="迷迭香" name="herb" />迷迭香</label>
+                <label><input type="checkbox" value="百里香" name="herb" />百里香</label>
+                <label><input type="checkbox" value="香茅" name="herb" />香茅</label>
+                <label><input type="checkbox" value="姜片" name="herb" />姜片</label>
+                <label><input type="checkbox" value="辣椒" name="herb" />辣椒</label>
+                <label><input type="checkbox" value="抹茶" name="herb" />抹茶</label>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>甜感 Sweet</h3>
+              <div class="option-grid">
+                <label><input type="checkbox" value="蜂蜜" name="sweet" />蜂蜜</label>
+                <label><input type="checkbox" value="枫糖" name="sweet" />枫糖</label>
+                <label><input type="checkbox" value="香草糖浆" name="sweet" />香草糖浆</label>
+                <label><input type="checkbox" value="焦糖" name="sweet" />焦糖</label>
+                <label><input type="checkbox" value="椰糖" name="sweet" />椰糖</label>
+                <label><input type="checkbox" value="黑糖" name="sweet" />黑糖</label>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>苦味/层次 Bitters</h3>
+              <div class="option-grid">
+                <label><input type="checkbox" value="安格式苦精" name="bitters" />安格式苦精</label>
+                <label><input type="checkbox" value="橙味苦精" name="bitters" />橙味苦精</label>
+                <label><input type="checkbox" value="巧克力苦精" name="bitters" />巧克力苦精</label>
+                <label><input type="checkbox" value="咖啡豆" name="bitters" />咖啡豆</label>
+                <label><input type="checkbox" value="黑胡椒" name="bitters" />黑胡椒</label>
+                <label><input type="checkbox" value="可可碎" name="bitters" />可可碎</label>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>口感 Texture</h3>
+              <div class="option-grid">
+                <label><input type="checkbox" value="冰沙" name="texture" />冰沙</label>
+                <label><input type="checkbox" value="碎冰" name="texture" />碎冰</label>
+                <label><input type="checkbox" value="蛋白泡沫" name="texture" />蛋白泡沫</label>
+                <label><input type="checkbox" value="气泡" name="texture" />气泡</label>
+                <label><input type="checkbox" value="烟熏" name="texture" />烟熏</label>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>装饰 Garnish</h3>
+              <div class="option-grid">
+                <label><input type="checkbox" value="橙皮" name="garnish" />橙皮</label>
+                <label><input type="checkbox" value="柠檬片" name="garnish" />柠檬片</label>
+                <label><input type="checkbox" value="青柠轮" name="garnish" />青柠轮</label>
+                <label><input type="checkbox" value="薄荷叶" name="garnish" />薄荷叶</label>
+                <label><input type="checkbox" value="樱桃" name="garnish" />樱桃</label>
+                <label><input type="checkbox" value="可食用花" name="garnish" />可食用花</label>
+                <label><input type="checkbox" value="盐边" name="garnish" />盐边</label>
+                <label><input type="checkbox" value="糖边" name="garnish" />糖边</label>
+                <label><input type="checkbox" value="肉桂棒" name="garnish" />肉桂棒</label>
+                <label><input type="checkbox" value="星茴香" name="garnish" />星茴香</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-title">
+            <h2>心情与口味</h2>
+            <p>让调酒更像是你的故事。</p>
+          </div>
+
+          <div class="grid grid--compact">
+            <div class="card card--form">
+              <label for="mood">我的心情</label>
+              <select id="mood">
+                <option value="微醺自在">微醺自在</option>
+                <option value="元气爆棚">元气爆棚</option>
+                <option value="松弛疗愈">松弛疗愈</option>
+                <option value="夜色浪漫">夜色浪漫</option>
+                <option value="灵感涌动">灵感涌动</option>
+                <option value="暖心治愈">暖心治愈</option>
+              </select>
+            </div>
+
+            <div class="card card--form">
+              <label for="taste">想要的口味</label>
+              <select id="taste">
+                <option value="清爽微酸">清爽微酸</option>
+                <option value="果香甜润">果香甜润</option>
+                <option value="花草清香">花草清香</option>
+                <option value="醇厚微苦">醇厚微苦</option>
+                <option value="辛香刺激">辛香刺激</option>
+                <option value="奶香柔滑">奶香柔滑</option>
+              </select>
+            </div>
+
+            <div class="card card--form">
+              <label for="intensity">酒精强度</label>
+              <select id="intensity">
+                <option value="轻盈">轻盈</option>
+                <option value="平衡">平衡</option>
+                <option value="强劲">强劲</option>
+              </select>
+            </div>
+
+            <div class="card card--form">
+              <label class="toggle">
+                <input type="checkbox" id="mocktailToggle" />
+                <span>无酒精模式（Mocktail）</span>
+              </label>
+              <label class="toggle">
+                <input type="checkbox" id="classicToggle" checked />
+                <span>经典搭配自动补全</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="mixBtn" class="primary">生成专属饮品</button>
+            <button id="resetBtn" class="ghost">清空选择</button>
+          </div>
+        </section>
+
+        <section class="panel__result" aria-live="polite">
+          <div class="result-card">
+            <div class="result-card__header">
+              <h2>你的专属调酒</h2>
+              <p class="result-card__hint">点击生成后在这里看到调酒建议。</p>
+            </div>
+            <div class="result-card__body">
+              <div class="result-block">
+                <h3 id="drinkName">等待灵感注入...</h3>
+                <p id="drinkTagline">选择材料后，生成专属配方。</p>
+              </div>
+              <div class="result-block">
+                <h4>配方比例</h4>
+                <ul id="recipeList"></ul>
+              </div>
+              <div class="result-block">
+                <h4>调酒步骤</h4>
+                <ol id="stepList"></ol>
+              </div>
+              <div class="result-block">
+                <h4>杯型推荐</h4>
+                <p id="glassType">等待灵感确定杯型。</p>
+              </div>
+              <div class="result-block">
+                <h4>风味描述</h4>
+                <p id="flavorNote">等你来混合心情与口味。</p>
+              </div>
+              <div class="result-block">
+                <h4>调酒师提示</h4>
+                <p id="mixTip">添加 2-3 类材料会更有层次。</p>
+              </div>
+              <div class="result-actions">
+                <button id="editBtn" class="ghost">编辑配方</button>
+                <button id="saveBtn" class="ghost">保存配方</button>
+                <button id="posterBtn" class="primary">分享海报</button>
+              </div>
+              <div class="result-block">
+                <h4>已保存配方</h4>
+                <ul id="savedList"></ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>仅为调酒灵感模拟器。请理性饮酒。</p>
+      </footer>
+    </div>
+
+    <div class="poster-modal" id="posterModal" aria-hidden="true">
+        <div class="poster-card" role="dialog" aria-modal="true">
+          <div class="poster-header">
+            <h3>分享海报</h3>
+            <button id="closePoster" class="ghost">关闭</button>
+          </div>
+          <canvas id="posterCanvas" width="720" height="960"></canvas>
+          <div class="poster-actions">
+  <a id="downloadPoster" class="btn primary" download="mood-mix-poster.png">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+    下载海报
+  </a>
+  <a id="downloadSvg" class="btn ghost" download="mood-mix-poster.svg">SVG</a>
+  <button id="copyPosterText" class="btn ghost">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    复制配方
+  </button>
+</div>
+          <p class="poster-hint">生成后可保存图片或复制文案分享。</p>
+        </div>
+      </div>
+  </body>
+</html>
